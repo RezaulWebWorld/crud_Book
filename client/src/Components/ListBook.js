@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Delete, Read} from '../ApiSevices/ApiService';
 import {Button, Table} from "react-bootstrap";
+import {useNavigate} from "react-router";
 
 
-const ListBook = () => {
+const ListBook = (props) => {
+    const navigate=useNavigate()
         const [booklists,setBook]=useState([])
        useEffect(()=>{
         Read().then((result) => {
@@ -15,7 +17,8 @@ const ListBook = () => {
         const deleteInfo=(id)=>{
             Delete(id).then((result) => {
                 if(result=== true){
-                    console.log("success")
+                    alert("successFully Delete")
+                     props.history.push("/")
                 }
             }).catch((err) => {
                 console.log(err)

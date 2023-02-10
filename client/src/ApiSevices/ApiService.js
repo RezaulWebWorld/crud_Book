@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function Create(Name,BookName,BuyDate,PaymentDate,Price,PaymentType,InstallMentType,InstallMentAmount){
-    let url="/api/v1/CreateBook"
+    let url="http://localhost:5000/api/v1/CreateBook"
     let postBody={
         Name: Name,
         BookName:BookName,

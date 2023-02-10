@@ -14,9 +14,9 @@ function App() {
 
          <BrowserRouter>
              <Routes>
-                 <Route exact path="/"  element={<CreatePage/>}/>
+                 <Route exact path="/"  render={(props)=><ReadPage {...props} key={Date.now()} />}/>
                  <Route path="/UpdatePage" element={<UpdatePage/>}/>
-                 <Route path="/ViewPage" element={<ReadPage/>}/>
+                 <Route path="/ViewPage" element={<CreatePage/>}/>
              </Routes>
          </BrowserRouter>
 
