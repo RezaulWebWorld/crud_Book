@@ -18,7 +18,7 @@ const ListBook = (props) => {
             Delete(id).then((result) => {
                 if(result=== true){
                     alert("successFully Delete")
-                     props.history.push("/")
+                     navigate("/")
                 }
             }).catch((err) => {
                 console.log(err)
